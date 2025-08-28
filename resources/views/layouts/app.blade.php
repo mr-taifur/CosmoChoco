@@ -86,10 +86,50 @@
     <!-- Main Content -->
     @yield('content')
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Cosmetics & Chocolate Store | All Rights Reserved</p>
-    </footer>
+   <!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row">
+
+            <!-- About -->
+            <div class="col-md-4 mb-4">
+                <h5>About CosmoChoco</h5>
+                <p>Delivering the finest cosmetics and chocolates right to your doorstep. Quality you can trust.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url('/') }}" class="text-white text-decoration-none footer-link">Home</a></li>
+                    <li><a href="{{ url('/products') }}" class="text-white text-decoration-none footer-link">Products</a></li>
+                    <li><a href="{{ url('/cart') }}" class="text-white text-decoration-none footer-link">Cart</a></li>
+                    <li><a href="{{ url('/login') }}" class="text-white text-decoration-none footer-link">Login</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-4 mb-4">
+                <h5>Contact Us</h5>
+                <p><i class="fas fa-envelope"></i> support@cosmochoco.com</p>
+                <p><i class="fas fa-phone-alt"></i> +880 1874004733</p>
+                <div class="d-flex gap-2 mt-2">
+                    <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="border-light">
+
+        <div class="text-center">
+            <p class="mb-0">&copy; 2025 CosmoChoco | All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+
 </body>
 
 </html>
