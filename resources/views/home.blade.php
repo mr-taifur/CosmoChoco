@@ -16,45 +16,55 @@
 </section>
 
 <!-- ===== Shop by Category ===== -->
-<section class="py-5">
+<section class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5">🛍️ Shop by Category</h2>
+        <h2 class="text-center mb-5 fw-bold">🛍️ Shop by Category</h2>
         <div class="row g-4">
+            <!-- Category Card -->
             <div class="col-md-3 col-sm-6">
-                <div class="card shadow-sm text-center h-100">
-                    <img src="img/lipstic.jpeg" class="card-img-top" alt="Skincare">
+                <div class="card category-card h-100 text-center border-0 shadow-sm">
+                    <div class="card-img-wrapper overflow-hidden">
+                        <img src="img/skincare.jpeg" class="card-img-top img-fluid" alt="Skincare">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Skincare</h5>
+                        <h5 class="card-title fw-bold">Skincare</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="card shadow-sm text-center h-100">
-                    <img src="img/lipstic.jpeg" class="card-img-top" alt="Makeup">
+                <div class="card category-card h-100 text-center border-0 shadow-sm">
+                    <div class="card-img-wrapper overflow-hidden">
+                        <img src="img/makeup.jpeg" class="card-img-top img-fluid" alt="Makeup">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Makeup</h5>
+                        <h5 class="card-title fw-bold">Makeup</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="card shadow-sm text-center h-100">
-                    <img src="img/lipstic.jpeg" class="card-img-top" alt="Chocolates">
+                <div class="card category-card h-100 text-center border-0 shadow-sm">
+                    <div class="card-img-wrapper overflow-hidden">
+                        <img src="img/chocolate.jpeg" class="card-img-top img-fluid" alt="Chocolates">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Chocolates</h5>
+                        <h5 class="card-title fw-bold">Chocolates</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="card shadow-sm text-center h-100">
-                    <img src="img/lipstic.jpeg" class="card-img-top" alt="Perfumes">
+                <div class="card category-card h-100 text-center border-0 shadow-sm">
+                    <div class="card-img-wrapper overflow-hidden">
+                        <img src="img/perfume.jpeg" class="card-img-top img-fluid" alt="Perfumes">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Perfumes</h5>
+                        <h5 class="card-title fw-bold">Perfumes</h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- ===== Featured Products ===== -->
 <section class="py-5 bg-light">
