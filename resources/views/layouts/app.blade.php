@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmetics & Chocolate Store</title>
+    <title>CosmoChoco</title>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Bootstrap -->
@@ -97,16 +97,18 @@
                 <p>Delivering the finest cosmetics and chocolates right to your doorstep. Quality you can trust.</p>
             </div>
 
-            <!-- Quick Links -->
-            <div class="col-md-4 mb-4">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="{{ url('/') }}" class="text-white text-decoration-none footer-link">Home</a></li>
-                    <li><a href="{{ url('/products') }}" class="text-white text-decoration-none footer-link">Products</a></li>
-                    <li><a href="{{ url('/cart') }}" class="text-white text-decoration-none footer-link">Cart</a></li>
-                    <li><a href="{{ url('/login') }}" class="text-white text-decoration-none footer-link">Login</a></li>
-                </ul>
-            </div>
+           <!-- Newsletter Subscription -->
+<div class="col-md-4 mb-4">
+    <h5>Subscribe to Our Newsletter</h5>
+    <form>
+        <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email">
+            <button class="btn btn-warning" type="submit">Subscribe</button>
+        </div>
+        <small class="text-light">Get exclusive offers & latest updates.</small>
+    </form>
+</div>
+
 
             <!-- Contact -->
             <div class="col-md-4 mb-4">

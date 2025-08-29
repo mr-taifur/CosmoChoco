@@ -6,99 +6,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 
-<!-- ===== Hero Section ===== -->
-<section class="hero text-center py-5 bg-light">
-    <div class="container">
-        <h2 class="mb-3">Discover the Best Cosmetics & Chocolates!</h2>
-        <p class="lead">Quality products delivered right to your doorstep.</p>
-        <a href="{{ url('/products') }}" class="btn btn-primary mt-3">Shop Now</a>
-    </div>
-</section>
 
-<!-- ===== Shop by Category ===== -->
+
+<!-- ===== Skincare Products ===== -->
 <section class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center mb-5 fw-bold">🛍️ Shop by Category 🛍️</h2>
-        <div class="row g-4">
-            
-            <!-- Skincare -->
-            <div class="col-md-3 col-sm-6">
-                <a href="{{ url('/products?category=skincare') }}" class="text-decoration-none">
-                    <div class="card category-card h-100 text-center border-0 shadow-sm">
-                        <div class="card-img-wrapper overflow-hidden" style="height: 250px;">
-                            <img src="img/skincare.jpeg" class="card-img-top img-fluid h-100 w-100 object-fit-cover" alt="Skincare">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Skincare</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Makeup -->
-            <div class="col-md-3 col-sm-6">
-                <a href="{{ url('/products?category=makeup') }}" class="text-decoration-none">
-                    <div class="card category-card h-100 text-center border-0 shadow-sm">
-                        <div class="card-img-wrapper overflow-hidden" style="height: 250px;">
-                            <img src="img/makeup.jpeg" class="card-img-top img-fluid h-100 w-100 object-fit-cover" alt="Makeup">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Makeup</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Chocolates -->
-            <div class="col-md-3 col-sm-6">
-                <a href="{{ url('/products?category=chocolates') }}" class="text-decoration-none">
-                    <div class="card category-card h-100 text-center border-0 shadow-sm">
-                        <div class="card-img-wrapper overflow-hidden" style="height: 250px;">
-                            <img src="img/chocolate.jpeg" class="card-img-top img-fluid h-100 w-100 object-fit-cover" alt="Chocolates">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Chocolates</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Perfumes -->
-            <div class="col-md-3 col-sm-6">
-                <a href="{{ url('/products?category=perfumes') }}" class="text-decoration-none">
-                    <div class="card category-card h-100 text-center border-0 shadow-sm">
-                        <div class="card-img-wrapper overflow-hidden" style="height: 250px;">
-                            <img src="img/perfume.jpeg" class="card-img-top img-fluid h-100 w-100 object-fit-cover" alt="Perfumes">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Perfumes</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-
-<!-- ===== Featured Products ===== -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">⭐ Featured Products ⭐</h2>
-        <div class="row g-4" id="product-list">
-            <!-- Products injected via JS -->
-        </div>
-    </div>
-</section>
-
-<!-- ===== New Arrivals ===== -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">✨ New Arrivals ✨</h2>
-        <div class="row g-4" id="new-arrival-list">
-            <!-- New arrivals injected via JS -->
+        <h2 class="text-center mb-5">✨ Chocolates Collection ✨</h2>
+        <div class="row g-4" id="skincare-list">
+            <!-- Skincare products injected via JS -->
         </div>
     </div>
 </section>
@@ -114,14 +29,13 @@
                     <p id="modal-desc"></p>
                     <h4 class="text-primary" id="modal-price"></h4>
                     <div class="mt-3">
-    <input type="number" id="modal-quantity" value="1" min="1" class="form-control mb-2" style="max-width:120px;">
+                        <input type="number" id="modal-quantity" value="1" min="1" class="form-control mb-2" style="max-width:120px;">
 
-    <div class="d-flex flex-column gap-2">
-        <button class="btn btn-success btn-lg w-100" id="add-to-cart-btn">Add to Cart</button>
-        <button class="btn btn-primary btn-lg w-100" id="buy-now-btn">Buy Now</button>
-    </div>
-</div>
-
+                        <div class="d-flex flex-column gap-2">
+                            <button class="btn btn-success btn-lg w-100" id="add-to-cart-btn">Add to Cart</button>
+                            <button class="btn btn-primary btn-lg w-100" id="buy-now-btn">Buy Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -164,26 +78,19 @@
     </div>
 </div>
 
+
 <!-- ===== Scripts ===== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    const products = [
-        { id: 1, name: 'Face Cream', desc: 'Hydrating face cream for glowing skin.', price: 15.99, img: 'img/facecream.jpeg' },
-        { id: 2, name: 'Milk Chocolate', desc: 'Sweet and creamy chocolate delight.', price: 4.5, img: 'img/chocolate.jpeg' },
-        { id: 3, name: 'Dark Chocolate', desc: 'Rich and delicious dark chocolate.', price: 5.5, img: 'img/darkchocolate.jpeg' },
-        { id: 4, name: 'Lipstick', desc: 'High quality matte lipstick.', price: 12.99, img: 'img/lipstic.jpeg' },
-    ];
-
-    const newArrivals = [
-        { id: 5, name: 'Luxury Perfume', desc: 'Fresh and long-lasting fragrance.', price: 49.99, img: 'img/eau.jpeg' },
-        { id: 6, name: 'Chocolate Gift Box', desc: 'Perfect gift for special moments.', price: 29.99, img: 'img/chocolate.jpeg' },
-        { id: 3, name: 'Dark Chocolate', desc: 'Rich and delicious dark chocolate.', price: 5.5, img: 'img/darkchocolate.jpeg' },
-        { id: 4, name: 'Lipstick', desc: 'High quality matte lipstick.', price: 12.99, img: 'img/lipstic.jpeg' },
+    const skincareProducts = [
+        { id: 101, name: 'Dark Chocolate 70%', desc: 'Rich, bittersweet dark chocolate made with premium cocoa beans.', price: 19.99, img: '/img/darkchocolate.jpeg' },
+        { id: 102, name: 'Hazelnut Milk Chocolate', desc: 'Creamy milk chocolate blended with crunchy roasted hazelnuts.', price: 12.50, img: '/img/hazelnut.jpeg' },
+        { id: 103, name: 'White Chocolate Delight', desc: 'Silky-smooth white chocolate for those who love a sweet indulgence.', price: 24.99, img: '/img/whitechoco.jpeg' },
+        { id: 104, name: 'Raffaelo Chocolate', desc: 'A Sweet and Crunchy Delight and Protein-Packed and Delicious', price: 15.00, img: '/img/mawanto.jpeg' }
     ];
 
     const cart = [];
-    const productList = document.getElementById('product-list');
-    const newArrivalList = document.getElementById('new-arrival-list');
+    const skincareList = document.getElementById('skincare-list');
     const productModal = new bootstrap.Modal(document.getElementById('productModal'));
     const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
     const modalImg = document.getElementById('modal-img');
@@ -193,8 +100,9 @@
     const modalQuantity = document.getElementById('modal-quantity');
     const cartCount = document.getElementById('cart-count');
 
-    // Reusable render function
+    // Render skincare products
     function renderProducts(list, container) {
+        container.innerHTML = '';
         list.forEach(product => {
             const col = document.createElement('div');
             col.className = 'col-lg-3 col-md-4 col-sm-6';
@@ -217,8 +125,7 @@
         });
     }
 
-    renderProducts(products, productList);
-    renderProducts(newArrivals, newArrivalList);
+    renderProducts(skincareProducts, skincareList);
 
     function updateCartCount() {
         const total = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -259,11 +166,11 @@
         cartModal.show();
     });
 
-    // Handle product modal
+    // Product modal
     document.addEventListener('click', (e) => {
         if(e.target.closest('.btn-cart')){
             const id = e.target.closest('.btn-cart').dataset.id;
-            const product = [...products, ...newArrivals].find(p => p.id == id);
+            const product = skincareProducts.find(p => p.id == id);
 
             modalImg.src = product.img;
             modalName.textContent = product.name;
