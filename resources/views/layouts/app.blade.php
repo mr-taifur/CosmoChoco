@@ -68,16 +68,41 @@
                     </div>
 
                     @auth
-                        <a href="{{ url('/my-orders') }}">My Orders</a>
-                        <form style="display:inline;" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button class="btn-logout btn btn-link p-0">Logout</button>
-                        </form>
+                        <!-- User/Admin Dropdown -->
+                        <div class="dropdown">
+                            <a class="dropdown-toggle fw-bold" href="#" role="button" id="userDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                @if (Auth::user()->role === 'admin')
+                                    Admin
+                                @else
+                                    {{ Auth::user()->name }}
+                                @endif
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                @if (Auth::user()->role === 'admin')
+                                    <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('/admin/profile') }}">Edit Profile</a></li>
+                                @else
+                                    <li><a class="dropdown-item" href="{{ url('/user/profile') }}">Edit Profile</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('/user/orders') }}">My Orders</a></li>
+                                @endif
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <form action="{{ route('logout') }}" method="POST" class="px-3">
+                                        @csrf
+                                        <button class="btn btn-link p-0" type="submit">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endauth
                 </nav>
+
 
             </div>
         </div>
@@ -86,51 +111,50 @@
     <!-- Main Content -->
     @yield('content')
 
-   <!-- Footer -->
-<footer class="bg-dark text-white pt-5 pb-3">
-    <div class="container">
-        <div class="row">
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
 
-            <!-- About -->
-            <div class="col-md-4 mb-4">
-                <h5>About CosmoChoco</h5>
-                <p>Delivering the finest cosmetics and chocolates right to your doorstep. Quality you can trust.</p>
-            </div>
-
-           <!-- Newsletter Subscription -->
-<div class="col-md-4 mb-4">
-    <h5>Subscribe to Our Newsletter</h5>
-    <form>
-        <div class="input-group">
-            <input type="email" class="form-control" placeholder="Enter your email">
-            <button class="btn btn-warning" type="submit">Subscribe</button>
-        </div>
-        <small class="text-light">Get exclusive offers & latest updates.</small>
-    </form>
-</div>
-
-
-            <!-- Contact -->
-            <div class="col-md-4 mb-4">
-                <h5>Contact Us</h5>
-                <p><i class="fas fa-envelope"></i> support@cosmochoco.com</p>
-                <p><i class="fas fa-phone-alt"></i> +880 1874004733</p>
-                <div class="d-flex gap-2 mt-2">
-                    <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+                <!-- About -->
+                <div class="col-md-4 mb-4">
+                    <h5>About CosmoChoco</h5>
+                    <p>Delivering the finest cosmetics and chocolates right to your doorstep. Quality you can trust.</p>
                 </div>
+
+                <!-- Newsletter Subscription -->
+                <div class="col-md-4 mb-4">
+                    <h5>Subscribe to Our Newsletter</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-warning" type="submit">Subscribe</button>
+                        </div>
+                        <small class="text-light">Get exclusive offers & latest updates.</small>
+                    </form>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-envelope"></i> support@cosmochoco.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +880 1874004733</p>
+                    <div class="d-flex gap-2 mt-2">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
             </div>
 
-        </div>
+            <hr class="border-light">
 
-        <hr class="border-light">
-
-        <div class="text-center">
-            <p class="mb-0">&copy; 2025 CosmoChoco | All Rights Reserved</p>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 CosmoChoco | All Rights Reserved</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
 
