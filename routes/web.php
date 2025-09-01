@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 // // Home page
 // Route::get('/', function () {
@@ -51,3 +52,12 @@ Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.d
 // User Dashboard
 Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
 
+
+// ---------------- Profile Management ----------------
+// User Profile
+Route::get('/user/profile', [ProfileController::class, 'edit'])->name('user.profile.edit');
+Route::post('/user/profile', [ProfileController::class, 'update'])->name('user.profile.update');
+
+// Admin Profile
+Route::get('/admin/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+Route::post('/admin/profile', [ProfileController::class, 'update'])->name('admin.profile.update');

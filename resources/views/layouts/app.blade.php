@@ -47,6 +47,7 @@
                 </button>
 
                 <!-- Navbar Links -->
+                <!-- Navbar Links -->
                 <nav class="d-flex align-items-center gap-2">
                     <a href="{{ url('/') }}">Home</a>
 
@@ -68,40 +69,27 @@
                     </div>
 
                     @auth
-                        <!-- User/Admin Dropdown -->
-                        <div class="dropdown">
-                            <a class="dropdown-toggle fw-bold" href="#" role="button" id="userDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                @if (Auth::user()->role === 'admin')
-                                    Admin
-                                @else
-                                    {{ Auth::user()->name }}
-                                @endif
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                @if (Auth::user()->role === 'admin')
-                                    <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('/admin/profile') }}">Edit Profile</a></li>
-                                @else
-                                    <li><a class="dropdown-item" href="{{ url('/user/profile') }}">Edit Profile</a></li>
-                                    <li><a class="dropdown-item" href="{{ url('/user/orders') }}">My Orders</a></li>
-                                @endif
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>
-                                    <form action="{{ route('logout') }}" method="POST" class="px-3">
-                                        @csrf
-                                        <button class="btn btn-link p-0" type="submit">Logout</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
+                        <!-- User/Admin Profile Link -->
+                        @if (Auth::user()->role === 'admin')
+                            <a href="{{ url('/admin/profile') }}" class="fw-bold">Admin</a>
+                        @else
+                            <a href="{{ url('/user/profile') }}" class="fw-bold">{{ Auth::user()->name }}</a>
+                        @endif
+
+                        <!-- Logout styled as nav link -->
+                        <a href="#" class="fw-bold"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endauth
                 </nav>
+
 
 
             </div>
